@@ -1,0 +1,486 @@
+/* ==========================================================================
+   Casio fx-570VN PLUS & SysAdmin Toolkit - Design System & Styles
+   ========================================================================== */
+
+:root {
+  --bg-app: #0f172a;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --surface-card: #1e293b;
+  --border-card: #334155;
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+
+  /* Casio Casing Palette */
+  --casing-bg: linear-gradient(175deg, #404854 0%, #2b323c 60%, #1e232a 100%);
+  --casing-border: #4d5766;
+  --casing-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+  /* Casio LCD Palette */
+  --lcd-bg: #9ea897;
+  --lcd-text: #192018;
+  --lcd-dim: rgba(25, 32, 24, 0.25);
+  --lcd-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4), inset 0 0 2px rgba(0,0,0,0.6);
+
+  /* Button Colors */
+  --btn-num-bg: linear-gradient(180deg, #f1f3f6 0%, #d8dde6 100%);
+  --btn-num-text: #111827;
+  --btn-num-shadow: 0 3px 0 #9ca3af, 0 4px 6px rgba(0,0,0,0.3);
+
+  --btn-fn-bg: linear-gradient(180deg, #374151 0%, #1f2937 100%);
+  --btn-fn-text: #f3f4f6;
+  --btn-fn-shadow: 0 3px 0 #111827, 0 4px 6px rgba(0,0,0,0.4);
+
+  --btn-del-bg: linear-gradient(180deg, #ea580c 0%, #c2410c 100%);
+  --btn-del-text: #ffffff;
+  --btn-del-shadow: 0 3px 0 #9a3412, 0 4px 6px rgba(0,0,0,0.3);
+
+  --btn-ac-bg: linear-gradient(180deg, #f97316 0%, #ea580c 100%);
+  --btn-ac-text: #ffffff;
+  --btn-ac-shadow: 0 3px 0 #c2410c, 0 4px 6px rgba(0,0,0,0.3);
+
+  --shift-color: #facc15;
+  --alpha-color: #f43f5e;
+}
+
+html.light {
+  --bg-app: #f1f5f9;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --surface-card: #ffffff;
+  --border-card: #e2e8f0;
+
+  --casing-bg: linear-gradient(175deg, #e2e8f0 0%, #cbd5e1 60%, #94a3b8 100%);
+  --casing-border: #94a3b8;
+  --casing-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.08);
+
+  --lcd-bg: #b4c2b0;
+  --lcd-text: #111811;
+  --lcd-dim: rgba(17, 24, 17, 0.2);
+
+  --btn-fn-bg: linear-gradient(180deg, #4b5563 0%, #374151 100%);
+  --btn-fn-shadow: 0 3px 0 #1f2937, 0 3px 5px rgba(0,0,0,0.2);
+}
+
+/* Base Body Styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nav Tabs */
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.tab-btn:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+  color: #ffffff;
+  background: var(--primary);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+}
+
+/* ==========================================================================
+   CASIO fx-570VN PLUS Casing
+   ========================================================================== */
+.casio-body {
+  width: 100%;
+  max-width: 410px;
+  margin: 0 auto;
+  background: var(--casing-bg);
+  border: 2px solid var(--casing-border);
+  border-radius: 28px 28px 40px 40px;
+  box-shadow: var(--casing-shadow);
+  padding: 1.25rem 1.15rem 1.5rem 1.15rem;
+  position: relative;
+  user-select: none;
+}
+
+/* Top Branding Bar */
+.casio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0 0.25rem;
+}
+
+.casio-brand {
+  font-family: 'Arial Black', Impact, sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  color: #f1f5f9;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+.casio-model {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #93c5fd;
+}
+
+.casio-subtext {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* LCD Display Area */
+.casio-screen-bezel {
+  background: #111827;
+  border-radius: 12px;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 3px 8px rgba(0,0,0,0.8);
+  margin-bottom: 1.15rem;
+}
+
+.casio-lcd {
+  background: var(--lcd-bg);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  box-shadow: var(--lcd-shadow);
+  color: var(--lcd-text);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* LCD Status Header */
+.lcd-indicators {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px dotted rgba(25, 32, 24, 0.25);
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.05em;
+}
+
+.lcd-indicators span {
+  transition: opacity 0.15s ease;
+}
+
+/* LCD Expression & Result Lines */
+.lcd-expression {
+  height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  letter-spacing: 0.05em;
+  scrollbar-width: none;
+}
+
+.lcd-expression::-webkit-scrollbar {
+  display: none;
+}
+
+.lcd-result {
+  height: 2.2rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 2.2rem;
+  text-align: right;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  letter-spacing: 0.05em;
+  scrollbar-width: none;
+}
+
+.lcd-result::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==========================================================================
+   Cụm Phím Điều Hướng & Chức Năng Trên (Top Function & Replay)
+   ========================================================================== */
+.top-controls {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.side-fn-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Replay Circular D-Pad */
+.replay-pad {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto;
+  background: radial-gradient(circle at 35% 35%, #4b5563, #1f2937);
+  border-radius: 50%;
+  border: 3px solid #374151;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.2);
+  display: grid;
+  grid-template-areas:
+    ". up ."
+    "left center right"
+    ". down .";
+  grid-template-columns: 1fr 1.2fr 1fr;
+  grid-template-rows: 1fr 1.2fr 1fr;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+}
+
+.replay-center {
+  grid-area: center;
+  font-size: 0.55rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.replay-btn {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s, color 0.1s;
+}
+
+.replay-btn:hover {
+  color: #ffffff;
+}
+
+.replay-btn:active {
+  transform: scale(0.88);
+}
+
+.replay-up { grid-area: up; }
+.replay-down { grid-area: down; }
+.replay-left { grid-area: left; }
+.replay-right { grid-area: right; }
+
+/* Top Mini Buttons (Shift, Alpha, Mode, On) */
+.btn-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #374151;
+  color: #f9fafb;
+  border: 1px solid #4b5563;
+  border-radius: 9999px;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  transition: all 0.1s ease;
+}
+
+.btn-top:active {
+  transform: translateY(1.5px);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.btn-top.btn-shift {
+  color: var(--shift-color);
+}
+
+.btn-top.btn-alpha {
+  color: var(--alpha-color);
+}
+
+/* ==========================================================================
+   Bàn Phím Khoa Học (Scientific Grid)
+   ========================================================================== */
+.sci-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.4rem 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.btn-sci-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-label-sub {
+  font-size: 0.55rem;
+  font-weight: 700;
+  line-height: 0.85rem;
+  height: 0.85rem;
+  white-space: nowrap;
+}
+
+.label-shift {
+  color: var(--shift-color);
+}
+
+.label-alpha {
+  color: var(--alpha-color);
+}
+
+.btn-sci {
+  width: 100%;
+  height: 28px;
+  background: var(--btn-fn-bg);
+  color: var(--btn-fn-text);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  box-shadow: var(--btn-fn-shadow);
+  font-size: 0.725rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.btn-sci:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #111827;
+}
+
+/* ==========================================================================
+   Bàn Phím Số & Phép Tính Cơ Bản (Numeric & Operations Keypad)
+   ========================================================================== */
+.numpad-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.55rem 0.45rem;
+}
+
+.btn-num-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-pad {
+  width: 100%;
+  height: 38px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-pad:active {
+  transform: translateY(2px);
+}
+
+/* Number keys */
+.btn-digit {
+  background: var(--btn-num-bg);
+  color: var(--btn-num-text);
+  box-shadow: var(--btn-num-shadow);
+}
+
+.btn-digit:active {
+  box-shadow: 0 1px 0 #9ca3af;
+}
+
+/* DEL & AC */
+.btn-del {
+  background: var(--btn-del-bg);
+  color: var(--btn-del-text);
+  box-shadow: var(--btn-del-shadow);
+}
+
+.btn-del:active {
+  box-shadow: 0 1px 0 #9a3412;
+}
+
+.btn-ac {
+  background: var(--btn-ac-bg);
+  color: var(--btn-ac-text);
+  box-shadow: var(--btn-ac-shadow);
+}
+
+.btn-ac:active {
+  box-shadow: 0 1px 0 #c2410c;
+}
+
+/* Operators (+, -, *, /) */
+.btn-op {
+  background: var(--btn-fn-bg);
+  color: #ffffff;
+  box-shadow: var(--btn-fn-shadow);
+  font-size: 1.15rem;
+}
+
+.btn-op:active {
+  box-shadow: 0 1px 0 #111827;
+}
+
+/* Equals key (=) */
+.btn-equals {
+  background: linear-gradient(180deg, #4f46e5 0%, #3730a3 100%);
+  color: #ffffff;
+  box-shadow: 0 3px 0 #312e81, 0 4px 6px rgba(0,0,0,0.3);
+  font-size: 1.25rem;
+}
+
+.btn-equals:active {
+  box-shadow: 0 1px 0 #312e81;
+}
+
+/* ==========================================================================
+   Badges & Result Cards
+   ========================================================================== */
+.badge-emerald { background-color: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-purple { background-color: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+.badge-amber { background-color: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+.badge-blue { background-color: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+.badge-rose { background-color: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.3); }
+.badge-gray { background-color: rgba(107, 114, 128, 0.15); color: #9ca3af; border: 1px solid rgba(107, 114, 128, 0.3); }
+.badge-sky { background-color: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3); }
+
+/* Animation utilities */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.pulse-active {
+  animation: pulseSubtle 1.8s infinite ease-in-out;
+}
