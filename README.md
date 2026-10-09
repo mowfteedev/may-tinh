@@ -52,6 +52,8 @@ Truy cập: `http://localhost:8080`
 | `Enter` hoặc `=` | Tính kết quả |
 | `Backspace` | Xóa lùi ký tự (`DEL`) |
 | `Escape` | Xóa toàn bộ (`AC`) |
+| `Shift` | Phím `SHIFT` (vàng) |
+| `Alt` hoặc `A` | Phím `ALPHA` (đỏ) |
 | `(` và `)` | Đóng/mở ngoặc |
 | `^` | Lũy thừa |
 | `S`, `C`, `T` | Hàm `sin`, `cos`, `tan` |

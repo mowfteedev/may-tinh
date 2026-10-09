@@ -343,6 +343,14 @@ document.addEventListener('DOMContentLoaded', () => {
       window.soundEngine.playClick();
       handleCalcAction('mode');
       e.preventDefault();
+    } else if (key === 'Shift') {
+      window.soundEngine.playClick();
+      handleCalcAction('shift');
+      e.preventDefault();
+    } else if (key === 'Alt' || key === 'a' || key === 'A') {
+      window.soundEngine.playClick();
+      handleCalcAction('alpha');
+      e.preventDefault();
     }
   });
 
