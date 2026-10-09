@@ -1,4 +1,1 @@
-# may-tinh
-# may-tinh
-# may-tinh
-# may-tinh
+# This is "May tinh bo tui" !
